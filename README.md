@@ -1,25 +1,25 @@
 # mini-rag-app
 
-تطبيق صغير لاسترجاع المعزّز بالتوليد (RAG): رفع مستندات، تقسيمها، تضمينها، ثم الإجابة على الأسئلة باستخدام سياق مسترجع.
+A small retrieval-augmented generation (RAG) app: ingest documents, chunk them, embed them, then answer questions using retrieved context.
 
-## المتطلبات
+## Requirements
 
-- Python 3.10+ (يُنصح بأحدث إصدار مستقر)
+- Python 3.10+ (latest stable recommended)
 
-## الإعداد
+## Setup
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # على Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-> أضف `requirements.txt` عند تعريف التبعيات الفعلية للمشروع.
+> Add `requirements.txt` once you define the project’s real dependencies.
 
-## الاستخدام
+## Usage
 
-سيتم توثيق أوامر التشغيل هنا بعد إضافة نقطة الدخول (CLI أو خادم ويب).
+Run instructions will be documented here after you add an entry point (CLI or web server).
 
-## الترخيص
+## License
 
-انظر ملف [LICENSE](LICENSE).
+See [LICENSE](LICENSE).

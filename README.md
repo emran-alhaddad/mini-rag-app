@@ -14,11 +14,30 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-> Add `requirements.txt` once you define the project’s real dependencies.
+Copy the environment template and adjust values as you add features (for example, LLM calls):
 
-## Usage
+```bash
+cp .env.example .env
+```
 
-Run instructions will be documented here after you add an entry point (CLI or web server).
+Edit `.env` and set `OPENAI_API_KEY` when your code needs it. Do not commit `.env` (it is gitignored).
+
+## Run the API
+
+The HTTP API is a [FastAPI](https://fastapi.tiangolo.com/) app in `main.py`. Start a development server with auto-reload:
+
+```bash
+uvicorn main:app --reload
+```
+
+Then open [http://127.0.0.1:8000](http://127.0.0.1:8000). Interactive docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+
+### Routes (starter)
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | Health-style JSON message |
+| GET | `/items/{item_id}` | Example path + optional query `q` |
 
 ## License
 

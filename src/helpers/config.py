@@ -6,7 +6,9 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str
     FILE_ALLOWED_MIME_TYPES: list[str]
     FILE_MAX_SIZE: int
-
+    PROJECT_DIRECTORY: str
+    FILE_DEFAULT_CHUNK_SIZE: float
+    
     class Config:
         env_file = ".env"
  

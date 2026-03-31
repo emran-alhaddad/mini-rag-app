@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     FILE_ALLOWED_MIME_TYPES: list[str]
     FILE_MAX_SIZE: int
     PROJECT_DIRECTORY: str
-    FILE_DEFAULT_CHUNK_SIZE: float
+    FILE_DEFAULT_CHUNK_SIZE: int
     
     class Config:
         env_file = ".env"

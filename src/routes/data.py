@@ -22,7 +22,7 @@ async def upload_data(project_id: str, file: UploadFile, app_settings: Settings 
         raise HTTPException(status_code=400, detail=message)
 
     project_path = ProjectController().get_project_directory(project_id)
-    file_path = data_controller.generate_unique_file_name(file.filename, project_id)
+    file_path, file_id = data_controller.generate_unique_file_path(file.filename, project_id)
     
     try:
         async with aiofiles.open(file_path, "wb") as f:
@@ -32,4 +32,4 @@ async def upload_data(project_id: str, file: UploadFile, app_settings: Settings 
         logger.error(f"Error uploading file: {e}")
         raise HTTPException(status_code=500, detail=f"{ResponseSignals.FILE_UPLOAD_FAILED.value}: {e}")
 
-    return {"message": ResponseSignals.FILE_UPLOAD_SUCCESS.value}
+    return {"message": ResponseSignals.FILE_UPLOAD_SUCCESS.value, "file_id": file_id}
